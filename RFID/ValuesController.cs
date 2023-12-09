@@ -9,7 +9,7 @@ namespace YourNamespace
     public class RFIDController : ControllerBase
     {
         //private readonly string connectionString = "server=192.168.50.212;uid=root;pwd=test;database=rfiddb";
-        private readonly string connectionString = "server=db4free.net;uid=rfid_gp_8;pwd=4G*UMZb7ZK.ixxB;database=ccu_rfid_ec";
+       // private readonly string connectionString = "server=db4free.net;uid=rfid_gp_8;pwd=4G*UMZb7ZK.ixxB;database=ccu_rfid_ec";
                  
 
         [HttpGet("GetRecordCount")]
