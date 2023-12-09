@@ -94,6 +94,7 @@ D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.AssemblyInfo.cs
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.csproj.CoreCompileInputs.cache
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.MvcApplicationPartsAssemblyInfo.cs
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.MvcApplicationPartsAssemblyInfo.cache
+D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.sourcelink.json
 D:\RFID\RFID\RFID\obj\Debug\net8.0\staticwebassets.build.json
 D:\RFID\RFID\RFID\obj\Debug\net8.0\staticwebassets.development.json
 D:\RFID\RFID\RFID\obj\Debug\net8.0\staticwebassets\msbuild.RFID.Microsoft.AspNetCore.StaticWebAssets.props
@@ -108,4 +109,3 @@ D:\RFID\RFID\RFID\obj\Debug\net8.0\refint\RFID.dll
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.pdb
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.genruntimeconfig.cache
 D:\RFID\RFID\RFID\obj\Debug\net8.0\ref\RFID.dll
-D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.sourcelink.json
