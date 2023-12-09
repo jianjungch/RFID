@@ -108,3 +108,4 @@ D:\RFID\RFID\RFID\obj\Debug\net8.0\refint\RFID.dll
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.pdb
 D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.genruntimeconfig.cache
 D:\RFID\RFID\RFID\obj\Debug\net8.0\ref\RFID.dll
+D:\RFID\RFID\RFID\obj\Debug\net8.0\RFID.sourcelink.json
