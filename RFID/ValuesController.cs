@@ -17,15 +17,17 @@ namespace YourNamespace
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    connection.Open();
-                    //  string query = "SELECT COUNT(*) FROM RFID_TEST";
-                    string query = "SELECT COUNT(*) FROM ccu_rfid_ec.usecase2";
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return Ok(count);
-                }
+                //using (MySqlConnection connection = new MySqlConnection(connectionString))
+                //{
+                //    connection.Open();
+                //    //  string query = "SELECT COUNT(*) FROM RFID_TEST";
+                //    string query = "SELECT COUNT(*) FROM ccu_rfid_ec.usecase2";
+                //    MySqlCommand cmd = new MySqlCommand(query, connection);
+                //    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                //    return Ok(count);
+                //}
+
+                return Ok(123);
             }
             catch (Exception ex)
             {
