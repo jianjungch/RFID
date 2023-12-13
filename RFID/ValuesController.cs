@@ -181,5 +181,58 @@ namespace YourNamespace
         }
 
 
+        [HttpGet("LocationInfo")]
+        public IActionResult LocationInfo(string LOC_ID)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT r.READER_ID,r.DESC,l.LOC_ID,l.LOC_DESC,PS_COUNT  FROM reader_m  r , loc_info_m l  WHERE r.loc_id=l.loc_id";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                    if (LOC_ID.Length > 0)
+                    {
+                        query += " and r.loc_id= @loc_id";
+                        cmd.Parameters.AddWithValue("@LOC_ID", LOC_ID);
+                    }                      
+
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            List<dynamic> result = new List<dynamic>();
+                            while (reader.Read())
+                            {
+                                var data = new
+                                {
+                                    READER_ID = reader["READER_ID"].ToString(),
+                                    READER_DESC = reader["READER_DESC"].ToString(),
+                                    LOC_ID = reader["LOC_ID"].ToString(),
+                                    LOC_DESC = reader["LOC_DESC"].ToString(),
+                                    PS_COUNT = reader["PS_COUNT"].ToString(),
+                                    // Add other fields here
+                                };
+                                result.Add(data);
+                            }
+                            return Ok(result);
+                        }
+                        else
+                        {
+                            return NotFound();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
     }
 }
