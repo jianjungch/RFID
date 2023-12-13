@@ -192,7 +192,7 @@ namespace YourNamespace
                     string query = "SELECT r.READER_ID,r.DESC,l.LOC_ID,l.LOC_DESC,PS_COUNT  FROM reader_m  r , loc_info_m l  WHERE r.loc_id=l.loc_id";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                    if (LOC_ID.Length > 0)
+                    if (LOC_ID.ToString() != "ALL" )
                     {
                         query += " and r.loc_id= @loc_id";
                         cmd.Parameters.AddWithValue("@LOC_ID", LOC_ID);
