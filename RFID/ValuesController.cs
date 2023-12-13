@@ -133,5 +133,53 @@ namespace YourNamespace
             }
         }
 
+
+        [HttpGet("MedInfo")]
+        public IActionResult MedInfo(string ps_id)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM med_info_t WHERE PS_ID = @ps_id ";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@ps_id", ps_id);
+
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            List<dynamic> result = new List<dynamic>();
+                            while (reader.Read())
+                            {
+                                var data = new
+                                {
+                                    ps_id = reader["PS_ID"].ToString(),
+                                    med_item = reader["ITEM"].ToString(),
+                                    med_info = reader["MED_INFO"].ToString(),
+                                    med_date = reader["MED_DATE"].ToString(),
+                                    care_id = reader["CARE_ID"].ToString(),
+                                    // Add other fields here
+                                };
+                                result.Add(data);
+                            }
+                            return Ok(result);
+                        }
+                        else
+                        {
+                            return NotFound();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
     }
 }
