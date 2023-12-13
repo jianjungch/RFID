@@ -189,7 +189,7 @@ namespace YourNamespace
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT r.READER_ID,r.DESC,l.LOC_ID,l.LOC_DESC,PS_COUNT  FROM reader_m  r , loc_info_m l  WHERE r.loc_id=l.loc_id";
+                    string query = "SELECT r.READER_ID,r.DESC READER_DESC,l.LOC_ID,l.LOC_DESC,PS_COUNT  FROM reader_m  r , loc_info_m l  WHERE r.loc_id=l.loc_id";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
                     if (LOC_ID.ToString() != "ALL" )
