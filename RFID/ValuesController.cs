@@ -264,7 +264,7 @@ namespace YourNamespace
 
                     string query = "SELECT r.READER_ID,r.DESC READER_DESC, l.LOC_ID,l.LOC_DESC,PS_COUNT,p.PS_ID,p.PS_NAME,p.PS_TYPE,p.TAG_ID,u.type ,CASE  WHEN (TO_SECONDS(NOW()) - TO_SECONDS(u.datetime)) > 5  THEN 'Y'  ELSE 'N' END AS overtime "
                                  + "FROM loc_info_m l left join reader_m r on l.loc_id = r.loc_id left join  usecase3 u on r.READER_ID = u.readerid  left join person p on u.tagid = p.TAG_ID "
-                                 + "WHERE 1=1  AND p.PS_TYPE='checkin'  ";
+                                 + "WHERE 1=1 and p.PS_ID is not null ";
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
