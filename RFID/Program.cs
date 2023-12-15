@@ -20,7 +20,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("MyCorsPolicy", policy =>
     {
-        policy.WithOrigins("https://rfid-ccu-group8.azurewebsites.net", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/TimeAlarm")
+        policy.WithOrigins("http://localhost:3000","https://rfid-ccu-group8.azurewebsites.net", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/TimeAlarm")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
