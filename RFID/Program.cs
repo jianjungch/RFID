@@ -4,14 +4,23 @@ using System.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 //20231215 append for  CORS 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyCorsPolicy", policy =>
+//    {
+//        policy.WithOrigins("https://rfid-ccu-group8.azurewebsites.net")
+//              .AllowAnyHeader()
+//              .AllowAnyMethod();
+//    });
+//});
+
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("MyCorsPolicy", policy =>
-    {
-        policy.WithOrigins("https://rfid-ccu-group8.azurewebsites.net")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+    options.AddPolicy("MyCorsPolicy",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
 });
 
 
