@@ -3,7 +3,7 @@ using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//20231215 append for  CORS 
+//20231215 append for  CORS    test result :fail
 //builder.Services.AddCors(options =>
 //{
 //    options.AddPolicy("MyCorsPolicy", policy =>
@@ -15,13 +15,27 @@ var builder = WebApplication.CreateBuilder(args);
 //});
 
 
+//20231215 append for  CORS 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("MyCorsPolicy",
-        builder => builder.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader());
+    options.AddPolicy("MyCorsPolicy", policy =>
+    {
+        policy.WithOrigins("https://rfid-ccu-group8.azurewebsites.net", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/", "https://rfid-ccu-group8.azurewebsites.net/api/RFID/TimeAlarm")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
+
+
+
+//20231215 append for  CORS   test result :Pass
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("MyCorsPolicy",
+//        builder => builder.AllowAnyOrigin()
+//                          .AllowAnyMethod()
+//                          .AllowAnyHeader());
+//});
 
 
 
