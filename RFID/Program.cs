@@ -3,8 +3,6 @@ using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 //20231215 append for  CORS 
 builder.Services.AddCors(options =>
 {
